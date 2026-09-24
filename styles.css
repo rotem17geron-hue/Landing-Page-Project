@@ -6,14 +6,9 @@ body {
   overflow: hidden;
   font-family: Roboto, sans-serif;
   display: flex;
-  flex: auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-img {
-  width: 600px;
 }
 
 button {
@@ -24,40 +19,17 @@ button {
   padding: 10px;
 }
 
-input {
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  padding: 8px 24px;
-  width: 400px;
-}
-
 ul {
   list-style-type: none;
   display: flex;
   flex: auto;
   gap: 15px;
-  
 }
 
 a {
-  /* this removes the line under our links */
   text-decoration: none;
   color: #F9FAF8;
   font-size: smaller;
-  font-weight: 50;
-}
-
-.header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 150px;
-  padding-right: 150px;
 }
 
 .header, .footer, .logo, .about {
@@ -79,7 +51,6 @@ a {
 .contents {
   flex-grow: 1;
   display: flex;
-  flex: auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -88,16 +59,36 @@ a {
 }
 
 .content {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.content.about.left, .content.about.right {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+}
+
+.content.about.right {
+    display: flex;
+    justify-content: end;
 }
 
 .quote {
-    padding-left: 300px;
-    padding-right: 300px;
     background-color: #E5E7EB;
     font-size: 36px;
     font-style: italic;
@@ -118,17 +109,25 @@ a {
 .right-links {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10px;
+}
+
+.header, .footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+  top: 0;
+  justify-content: space-between;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .footer {
-  position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 52px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  background: #1F2937;;
 }
